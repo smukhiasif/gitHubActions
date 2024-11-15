@@ -1,0 +1,19 @@
+name: "List Default ENV variabls"
+
+on: workflow_dispatch
+
+jobs:
+  ububtu-environment-variabls:
+    runs-on: ubuntu-latest
+    steps:
+      - run: env
+
+  windows-environment-variabls:
+    runs-on: windows-latest
+    steps:
+      - run: env
+
+  macos-environment-variabls:
+    runs-on: macos-latest
+    steps:
+      - run: env
