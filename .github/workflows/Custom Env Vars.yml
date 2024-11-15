@@ -1,0 +1,29 @@
+name: "Custom Env Vars"
+
+on:
+  workflow_dispatch:
+
+# Globaly defined and can access to any jobs or steps
+env:
+  DAY_OF_WEEK: Funday
+  testvar: value-1
+
+jobs:
+  mainjob:
+    name: "Print the env vars"
+    runs-on: ubuntu-latest
+    # Define in jobs can be accessible in this job and its steps only
+    env:
+      Greeting: Dear
+      testvar: value-2
+
+    steps:
+      - name: print-values-of-env-vars
+        run: |
+          echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+          echo "testvar  $testvar"
+          echo "testvar  ${{ env.testvar }}"
+        # Only accesssible in this steps
+        env:
+          First_Name: Student
+          testvar: value-3
