@@ -3,11 +3,12 @@ name: "List Default ENV variabls Demo"
 on: workflow_dispatch
 
 jobs:
-    mainjob: 
-        name: 'Print the Default Github Vars'
-        runs-on: ubuntu-latest
+  mainjob:
+    name: Print the Default Github Vars
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: print-github-default-vars
-            run: |
-             echo "$GITHUB_ACTIONS"
+    steps:
+      - name: print-github-default-vars
+        run: |
+          echo "$GITHUB_ACTIONS"
+          echo "$GITHUB_ENV"
