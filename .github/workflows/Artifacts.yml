@@ -8,7 +8,7 @@ jobs:
 
     steps:
         - name: "Create a local file"
-          run: echo "Something new happened" > file.txt"
+          run: echo "Something new happened" > file.txt
 
         - uses: actions/upload-artifact@v2
 
