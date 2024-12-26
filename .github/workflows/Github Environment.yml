@@ -7,11 +7,11 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     environment:
-      name: dev
+      name: production
       url: https://github.com
 
     steps:
       - name: "Print secret from environment"
         run: |
           echo "APP_SECRET: ${{ secrets.APP_SECRET  }}"
-          echo "APP_SECRET: ${{ secrets.DEV_SECRET  }}"
+          echo "DEV_SECRET: ${{ secrets.DEV_SECRET  }}"
